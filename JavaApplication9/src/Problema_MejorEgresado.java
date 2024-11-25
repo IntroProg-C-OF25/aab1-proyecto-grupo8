@@ -27,12 +27,50 @@ mejores egresados
 import java.util.Scanner;
 
 public class Problema_MejorEgresado {
+
     public static void main(String[] args) {
         Scanner tcl = new Scanner(System.in);
-        double nota = 0;
-        
-                
-        
+        double nota, notamax, max2;
+        int cont, lim;
+        String alum, alumgod, alumgod2;
+        System.out.print("Cuantos estudiantes va a inscribir?: ");
+        lim = tcl.nextInt();
+        cont = 1;
+        notamax = -1;
+        max2 = 0;
+        alumgod = "";
+        alumgod2 = " ";
+        while (lim >= cont) {
+            System.out.print("Ingresar el nombre y promedio del estudiante: ");
+            alum = tcl.next();
+            nota = tcl.nextDouble();
+            if (nota > notamax) {
+                notamax = nota;
+                alumgod = alum;
+            } else if (notamax == nota) {
+                alumgod2 = alum;
+                max2 = nota;
+            }
+
+            cont++;
+
+        }
+        if (max2 == 0) {
+            System.out.println("El estudiante " + alumgod + " es el mejor promedio con " + notamax);
+        } else {
+            System.out.println("El estudiante " + alumgod + " y el estudiante " + alumgod2 + " consiguieron la nota mas alta con " + notamax);
+        }
+
     }
-    
 }
+
+/* run:
+Cuantos estudiantes va a inscribir?: 5
+Ingresar el nombre y promedio del estudiante: Jorge 9,6
+Ingresar el nombre y promedio del estudiante: Andres 9,5
+Ingresar el nombre y promedio del estudiante: Pedro 2
+Ingresar el nombre y promedio del estudiante: Ricardo 5,9
+Ingresar el nombre y promedio del estudiante: Polla 10
+El estudiante Polla es el mejor promedio con 10.0
+BUILD SUCCESSFUL (total time: 28 seconds)
+*/

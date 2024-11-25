@@ -56,3 +56,41 @@ public class randomnumber {
         }
     }
 }
+
+/*run:
+Tienes 15 intentos
+Adivina el numero del 0 al 100: 
+98
+�Quieres una pista?�si o no? 
+si
+Es menor
+Tienes 13 intentos
+Adivina el numero del 0 al 100: 
+50
+�Quieres una pista?�si o no? 
+si
+Es menor
+Tienes 11 intentos
+Adivina el numero del 0 al 100: 
+25
+�Quieres una pista?�si o no? 
+si
+Es mayor
+Tienes 9 intentos
+Adivina el numero del 0 al 100: 
+35
+�Quieres una pista?�si o no? 
+si
+Es mayor
+Tienes 7 intentos
+Adivina el numero del 0 al 100: 
+40
+�Quieres una pista?�si o no? 
+si
+Es menor
+Tienes 5 intentos
+Adivina el numero del 0 al 100: 
+37
+Ganaste
+BUILD SUCCESSFUL (total time: 40 seconds)
+*/
