@@ -16,11 +16,9 @@ public class randomnumber {
         int aleat = (int) (Math.random() * 100);
         int num, cont;
         String xd;
-<<<<<<< HEAD
+
         cont = 15;
-=======
-        cont = 10;
->>>>>>> e94c6e98c5aede8b32bc6c12e8e130eda3889bf3
+
         while (true) {
             System.out.println("Tienes " + cont + " intentos");
             System.out.println("Adivina el numero del 0 al 100: ");
@@ -29,21 +27,17 @@ public class randomnumber {
                 System.out.println("Ganaste");
                 break;
             }
-<<<<<<< HEAD
+
             if (cont <= 0) {
                 System.out.println("Perdiste");
                 break;
             }
             cont--;
+
             if ((num != aleat) && (cont > 0)) {
                 System.out.println("¿Quieres una pista?¿si o no? ");
                 xd = tcl.next();
 
-=======
-            if (num != aleat) {
-                System.out.println("¿Quieres una pista?¿si o no? ");
-                xd = tcl.next();
->>>>>>> e94c6e98c5aede8b32bc6c12e8e130eda3889bf3
                 if (xd.equals("si")) {
                     if (num > aleat) {
                         System.out.println("Es menor");
