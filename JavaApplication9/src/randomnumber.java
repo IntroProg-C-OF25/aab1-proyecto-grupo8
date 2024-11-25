@@ -8,37 +8,47 @@ automáticamente le resta un intento y le informa cuantos intentos le quedan. Al
 finalizar el juego, se debe felicitar al usuario si gana y como, o pedir que lo
 intente de nuevo.*/
 import java.util.Scanner;
+
 public class randomnumber {
+
     public static void main(String[] args) {
         Scanner tcl = new Scanner(System.in);
-        int aleat = (int) (Math.random()*100);
+        int aleat = (int) (Math.random() * 100);
         int num, cont;
         String xd;
-        cont = 10;
-        while(true){
-            System.out.println("Tienes "+cont+" intentos");
+        cont = 15;
+        while (true) {
+            System.out.println("Tienes " + cont + " intentos");
             System.out.println("Adivina el numero del 0 al 100: ");
-            num=tcl.nextInt();
-            if (num==aleat){
+            num = tcl.nextInt();
+            if (num == aleat) {
                 System.out.println("Ganaste");
                 break;
             }
-            if (num!=aleat){
+            if (cont <= 0) {
+                System.out.println("Perdiste");
+                break;
+            }
+            cont--;
+            if ((num != aleat) && (cont > 0)) {
                 System.out.println("¿Quieres una pista?¿si o no? ");
                 xd = tcl.next();
-                if (xd.equals("si")){
-                    if (num >aleat){
+
+                if (xd.equals("si")) {
+                    if (num > aleat) {
                         System.out.println("Es menor");
+
                     } else {
                         System.out.println("Es mayor");
                     }
+                    cont--;
                 }
-                if (xd.equals("no")){
+                if (xd.equals("no")) {
                     System.out.println("Continua");
                 }
-                    
+
             }
-            cont--;
+
         }
     }
 }
