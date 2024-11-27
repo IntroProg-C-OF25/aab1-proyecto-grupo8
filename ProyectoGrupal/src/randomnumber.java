@@ -14,7 +14,8 @@ public class randomnumber {
     public static void main(String[] args) {
         Scanner tcl = new Scanner(System.in);
         int aleat = (int) (Math.random() * 100);
-        int num, cont;
+        int num, cont, i;
+        double red;
         String xd;
 
         cont = 15;
@@ -33,26 +34,44 @@ public class randomnumber {
                 break;
             }
             cont--;
+            if (cont >= 10) {
 
-            if ((num != aleat) && (cont > 0)) {
-                System.out.println("¿Quieres una pista?¿si o no? ");
-                xd = tcl.next();
+                if ((num != aleat) && (cont > 0)) {
+                    System.out.println("¿Quieres una pista?¿si o no? ");
+                    xd = tcl.next();
 
-                if (xd.equals("si")) {
-                    if (num > aleat) {
-                        System.out.println("Es menor");
+                    if (xd.equals("si")) {
+                        if (num > aleat) {
+                            System.out.println("Es menor");
 
-                    } else {
-                        System.out.println("Es mayor");
+                        } else {
+                            System.out.println("Es mayor");
+                        }
+                        cont--;
                     }
-                    cont--;
-                }
-                if (xd.equals("no")) {
-                    System.out.println("Continua");
-                }
+                    if (xd.equals("no")) {
+                        System.out.println("Continua");
+                    }
 
+                } else if (cont >= 5) {
+                    for (i = 2; i < num; i++) {
+                        red = num % i;
+                        if (red == 0) {
+                            System.out.println("No es primo");
+                            break;
+                        } else {
+                            System.out.println("Es primo");
+                            break;
+                        }
+                    }
+                } else if (cont > 5) {
+                    if ((num % 2) == 0) {
+                        System.out.println("Es par");
+                    } else {
+                        System.out.println("Es impar");
+                    }
+                }
             }
-
         }
     }
 }
@@ -93,4 +112,4 @@ Adivina el numero del 0 al 100:
 37
 Ganaste
 BUILD SUCCESSFUL (total time: 40 seconds)
-*/
+ */
