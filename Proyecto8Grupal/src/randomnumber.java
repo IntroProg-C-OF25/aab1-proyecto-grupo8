@@ -34,18 +34,40 @@ public class randomnumber {
                 break;
             }
             cont--;
-            if (cont >= 10) {
+            if (cont >= 1) {
 
                 if ((num != aleat) && (cont > 0)) {
                     System.out.println("¿Quieres una pista?¿si o no? ");
                     xd = tcl.next();
 
-                    if (xd.equals("si")) {
+                    if (xd.equals("si") && (cont >= 10)) {
+                        cont--;
                         if (num > aleat) {
                             System.out.println("Es menor");
 
                         } else {
                             System.out.println("Es mayor");
+                        }
+
+                    }
+                    if (xd.equals("si") && ((cont < 10) && (cont >= 5))) {
+                        for (i = 2; i < aleat; i++) {
+                            red = aleat % i;
+                            cont--;
+                            if (red == 0) {
+                                System.out.println("No es primo");
+                                break;
+                            } else {
+                                System.out.println("Es primo");
+                                break;
+                            }
+                        }
+                    }
+                    if (xd.equals("si") && (cont < 5)) {
+                        if ((aleat % 2) == 0) {
+                            System.out.println("Es par");
+                        } else {
+                            System.out.println("Es impar");
                         }
                         cont--;
                     }
@@ -53,23 +75,6 @@ public class randomnumber {
                         System.out.println("Continua");
                     }
 
-                } else if (cont >= 5) {
-                    for (i = 2; i < num; i++) {
-                        red = num % i;
-                        if (red == 0) {
-                            System.out.println("No es primo");
-                            break;
-                        } else {
-                            System.out.println("Es primo");
-                            break;
-                        }
-                    }
-                } else if (cont > 5) {
-                    if ((num % 2) == 0) {
-                        System.out.println("Es par");
-                    } else {
-                        System.out.println("Es impar");
-                    }
                 }
             }
         }
